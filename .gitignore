@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Configuración local generada por los programas
+config_figuras.json
+calibracion_colores.json
+
+# Editor / sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
