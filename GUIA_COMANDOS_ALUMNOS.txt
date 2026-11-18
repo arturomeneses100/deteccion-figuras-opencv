@@ -1,0 +1,86 @@
+git --version
+python --version
+gh --version
+
+ Usa el MISMO correo de tu cuenta de GitHub.
+
+git config --global user.name "Nombre Apellido"
+git config --global user.email "tu_correo@ejemplo.com"
+
+ Verificar:
+
+git config --global --list
+
+
+gh auth login
+
+ Responde con las flechas y Enter:
+   Where do you use GitHub?                          -> GitHub.com
+   What is your preferred protocol?                  -> HTTPS
+   Authenticate Git with your GitHub credentials?    -> Y
+   How would you like to authenticate?               -> Login with a web browser
+
+ En la TERMINAL aparece un código de 8 caracteres (ejemplo: A1B2-C3D4).
+ No llega por correo ni por notificación: cópialo de la terminal.
+ Presiona Enter, pega el código en la página que se abre y autoriza.
+
+ Verificar:
+
+gh auth status
+
+ Debe decir: Logged in to github.com account TU_USUARIO
+
+ Si el código caducó (15 minutos), presiona Ctrl + C y repite: gh auth login
+
+
+ Primero ve a tu carpeta de Documentos:
+
+cd $HOME\Documents
+
+git clone https://github.com/arturomeneses100/deteccion-figuras-opencv.git
+cd deteccion-figuras-opencv
+
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+ Si funcionó, la línea de la terminal empieza con (venv).
+
+ Si sale el error "la ejecución de scripts está deshabilitada":
+
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+.\venv\Scripts\Activate.ps1
+
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+ Verificar que OpenCV quedó instalado:
+
+python -c "import cv2, numpy; print('OpenCV', cv2.__version__)"
+
+
+python calibrador_colores.py
+python detector_figuras.py
+
+ Si la cámara no abre, prueba con otra cámara:
+
+python detector_figuras.py --camara 1
+
+ Probar con una imagen en lugar de la cámara:
+
+python detector_figuras.py --imagen foto.jpg
+
+ Para salir: tecla q o ESC
+
+
+ CADA VEZ QUE VUELVAS A TRABAJAR
+
+cd $HOME\Documents\deteccion-figuras-opencv
+.\venv\Scripts\Activate.ps1
+
+ Traer las actualizaciones:
+
+git pull
+
+python detector_figuras.py
+
