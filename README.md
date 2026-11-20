@@ -98,6 +98,6 @@ python calibrador_colores.py --camara 1
 **Arturo Elfego Meneses Flores**
 Universidad Tecnológica de la Huasteca Hidalguense (UTHH)
 
-## Licencia
+## 13. Licencia
 
-Distribuido bajo la licencia MIT. Puedes usarlo, modificarlo y compartirlo libremente con fines educativos o de otro tipo.
+[MIT](LICENSE) © 2026 Arturo Elfego Meneses Flores — DUAL ARD / UTHH.
